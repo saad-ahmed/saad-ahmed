@@ -45,10 +45,6 @@ have access. Ask and I'll add you, or I'll walk you through any of it live.
   **Stack:** Python · FastAPI · MCP connector mounted on the same service · DocketAlarm
   API · pandas + openpyxl for Salesforce exports · an LLM classifier with a deterministic
   rule-based fallback · Postgres · eval suite for the classifier · Docker · semgrep.
-- **[docketsort-web](https://github.com/saad-ahmed/docketsort-web)** (private) — the
-  marketing site.
-  **Stack:** Next.js 15 · React 19 · TypeScript · Tailwind v4 · Sanity (embedded studio,
-  next-sanity).
 
 ### A content-site factory
 
@@ -67,8 +63,7 @@ have access. Ask and I'll add you, or I'll walk you through any of it live.
 
 - **[brunson](https://github.com/saad-ahmed/brunson)** (private) — a talent marketplace
   where the candidate owns the profile and the evidence behind it, instead of a recruiter
-  owning the pitch. [brunson-marketing](https://github.com/saad-ahmed/brunson-marketing) is
-  the site and studio.
+  owning the pitch.
   **Stack:** React 19 + Vite · TypeScript · Mantine · Clerk auth · Postgres with
   node-pg-migrate · S3 with presigned uploads · Anthropic SDK · MCP SDK · pdf.js, mammoth,
   and xlsx for résumé and evidence parsing · Vitest + Playwright · Docker on Railway.
