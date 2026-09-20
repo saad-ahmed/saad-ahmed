@@ -26,6 +26,16 @@ have access. Ask and I'll add you, or I'll walk you through any of it live.
   **Stack:** Python 3.11 · Claude Agent SDK · DeepSeek as the executor model · MCP server
   SDK · asyncpg + Postgres · Pydantic + JSON Schema for structured output · Typer + Rich
   CLI · httpx · git worktrees for run isolation · pytest, mypy, ruff.
+  **Next to LangGraph:** I built the durable-execution parts myself before reaching for a
+  framework — the run state machine, the checkpoint-and-resume path, the stuck-agent
+  handback, all of which LangGraph gives you as a checkpointer, `interrupt()`, and
+  subgraphs. Where I went past what a graph runtime covers: context compaction as a budget
+  strategy rather than a summarization step, circuit breakers that kill a run before it
+  burns a day of tokens, a completion gate that refuses work the agent only claims is
+  done, and cascade rebase across parallel worktrees. Porting the planner subgraph onto
+  LangGraph and putting LangSmith traces over the whole run is the next thing on my list;
+  I'd rather have a measured comparison than an opinion.
+
 - **[ecco](https://github.com/saad-ahmed/ecco)** (private) — the coordinator. A
   self-hosted tracker that hands models assignments, context, skills, and constraints, and
   gives them a way to hand work back when they're stuck. The MCP surface mirrors Linear's,
