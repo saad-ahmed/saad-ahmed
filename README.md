@@ -26,15 +26,16 @@ have access. Ask and I'll add you, or I'll walk you through any of it live.
   **Stack:** Python 3.11 · Claude Agent SDK · DeepSeek as the executor model · MCP server
   SDK · asyncpg + Postgres · Pydantic + JSON Schema for structured output · Typer + Rich
   CLI · httpx · git worktrees for run isolation · pytest, mypy, ruff.
-  **Next to LangGraph:** I built the durable-execution parts myself before reaching for a
-  framework — the run state machine, the checkpoint-and-resume path, the stuck-agent
-  handback, all of which LangGraph gives you as a checkpointer, `interrupt()`, and
-  subgraphs. Where I went past what a graph runtime covers: context compaction as a budget
-  strategy rather than a summarization step, circuit breakers that kill a run before it
-  burns a day of tokens, a completion gate that refuses work the agent only claims is
-  done, and cascade rebase across parallel worktrees. Porting the planner subgraph onto
-  LangGraph and putting LangSmith traces over the whole run is the next thing on my list;
-  I'd rather have a measured comparison than an opinion.
+  **What it is, in LangChain terms:** a tiny DIY version of LangGraph, LangSmith, and Deep
+  Agents, rolled by hand before I knew the category had names for any of it. Claude plans
+  and decomposes the work, DeepSeek executes it, each run lands in an isolated git
+  worktree, run state lives in Postgres so a crashed run resumes instead of restarting,
+  context gets compacted against a token budget rather than summarized, and circuit
+  breakers plus a completion gate stop a run that's looping or lying about being done.
+  That's LangGraph's durable execution and interrupts, LangSmith's run traces, and Deep
+  Agents' planner-plus-subagents pattern — each one homegrown, none of it as good as the
+  real thing. Porting the planner onto LangGraph and putting LangSmith over the full run
+  is the next thing on my list.
 
 - **[ecco](https://github.com/saad-ahmed/ecco)** (private) — the coordinator. A
   self-hosted tracker that hands models assignments, context, skills, and constraints, and
