@@ -3,7 +3,7 @@
 By day I close enterprise deals at Everlaw. At night I'm agent-pilled, building the
 infrastructure my buyers will need in about a year. Both halves make the other one work.
 
-**The day job:** $1.5M closed in my first six months — new business, expansions,
+**The day job:** $1.5M closed in the first six months of the fiscal year — new business, expansions,
 competitive displacements, partner motions. Got complex enterprise customers through
 onboarding ahead of schedule by doing the boring necessary work: detailed handoffs,
 stakeholder maps, explicit requirements. Built and tested seven agentic legal-workflow
